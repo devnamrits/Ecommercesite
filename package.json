@@ -1,0 +1,14 @@
+{
+  "name": "expresslearning",
+  "version": "1.0.0",
+  "description": "\"Contains code while learning expressjs\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app"
+  },
+  "author": "HRK",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
