@@ -8,12 +8,22 @@ const app = express();
 // We travel from middleware to middleware from top to bottom
 // using next
 
-app.use((req, res, next) => {
-  console.log("In the middleware!");
-  next(); //Allows the request to continue to the next middleware in line
+//One should see the order in which middlewares will be
+//executed.
+
+//To avoid the order issue we are running this block of code
+app.use("/", (req, res, next) => {
+  console.log("This always works");
+  next();
 });
 
-app.use((req, res, next) => {
+app.use("/add-product", (req, res, next) => {
+  console.log("In Add Product Page");
+  res.send("<html><h1>The 'Add Product' page.</h1></html");
+  // ...
+});
+
+app.use("/", (req, res, next) => {
   console.log("In another middleware");
   res.send("<html><h1>Hello ExpressJS</h1></html");
   // ...
