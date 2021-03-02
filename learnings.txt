@@ -16,3 +16,7 @@ executed.
 segment for our path which all routes in a given file use to 
 outsource that into this app.js file so that we don't have to repeat
 it for all routes
+
+=> .. will also work instead of ../
+
+=> mainModule is deprecated. Hence we used require.main.filename.
