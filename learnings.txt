@@ -20,3 +20,8 @@ it for all routes
 => .. will also work instead of ../
 
 => mainModule is deprecated. Hence we used require.main.filename.
+
+=> The static keyword defines static methods for classes.
+
+Static methods are called directly on the class 
+without creating an instance/object of the class.

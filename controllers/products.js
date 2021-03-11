@@ -1,4 +1,4 @@
-const products = [{ title: 'First Book' }];
+const Product = require('../models/product')
 
 exports.getAddProducts = (req, res, next) => {
     //res.sendFile(path.join(rootDir, "views", "add-product.html"));
@@ -9,13 +9,13 @@ exports.getAddProducts = (req, res, next) => {
 }
 
 exports.postAddProducts = (req, res, next) => {
-    console.log(req.body);
-    products.push({ title: req.body.title });
+    const product = new Product(req.body.title);
+    product.save();
     res.redirect("/");
 }
 
 exports.getProducts = (req, res, next) => {
-    console.log("shop.js", products);
+    const products = Product.fetchAll();
     //res.sendFile(path.join(rootDir, "views", "shop.html"));
     res.render("shop", {
         pageTitle: "Shop",
